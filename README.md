@@ -14,3 +14,20 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the Oxlint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+
+# Day 1 — JSX, Components, Rendering
+
+## What I learned
+- JSX compiles down to `React.createElement()` calls
+- Components are just functions returning JSX
+- `className` instead of `class`, self-closing tags required
+- `{ }` embeds JS expressions (not statements) in JSX
+
+## What I built
+- `ProfileCard` component rendering hardcoded name/bio/avatar
+- Rendered 3 instances in `App.jsx`
+
+## Bug I hit
+Blank screen on localhost:5173 — turned out to be the component name was misspelled.
+Lesson: always check the browser console first.
+
