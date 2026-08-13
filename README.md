@@ -31,3 +31,18 @@ If you are developing a production application, we recommend using TypeScript wi
 Blank screen on localhost:5173 — turned out to be the component name was misspelled.
 Lesson: always check the browser console first.
 
+# Day 2 — Props & Component Composition
+
+## What I learned
+- Props pass data from parent to child components, like function arguments
+- Destructuring props in the function signature (`{ name, role }`) instead of writing `props.name` everywhere
+- Props are read-only — a component can never modify the props it receives (one-way data flow: "data down, actions up")
+- `children` is a special prop — whatever's nested between a component's opening/closing tags
+- Conditional rendering with ternaries (`condition ? a : b`) and `&&` (`condition && <Element />`)
+- Gotcha: `count && <Element />` renders a stray `0` on screen if `count` is `0`, since React renders `0` but not `false`/`null`/`undefined`. Fix: use `count > 0 && <Element />`.
+
+## What I built
+- Refactored `ProfileCard` to accept `name`, `role`, `isOnline` as props instead of hardcoded values
+- Moved card data into a `people` array in `App.jsx`, rendered via `.map()` with `key={person.id}`
+- Built a reusable `Badge` component using `children`, used it for an "Online" status indicator
+
