@@ -1,3 +1,5 @@
+/* DAY 1
+
 function ProfileCard(){
     const name ="Berwin C R";
     const bio = "Software engineer who is in awe of technologies";
@@ -17,4 +19,18 @@ function ProfileCard(){
         </div>
     );
 }
+export default ProfileCard;
+*/
+import Badge from './Badge';
+
+function ProfileCard({name, role, isOnline}){
+    return (
+        <div className="card">
+            <h2>{name}</h2>
+            <p>{role}</p>
+            {isOnline && <Badge>🟢 Online</Badge>}
+        </div>
+    );
+}
+
 export default ProfileCard;
