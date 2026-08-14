@@ -21,6 +21,8 @@ function ProfileCard(){
 }
 export default ProfileCard;
 */
+
+/* DAY 2
 import Badge from './Badge';
 
 function ProfileCard({name, role, isOnline}){
@@ -33,4 +35,23 @@ function ProfileCard({name, role, isOnline}){
     );
 }
 
+export default ProfileCard;
+*/
+
+import {useState} from 'react';
+import Badge from './Badge';
+
+function ProfileCard({name,role,isOnline}){
+    const [likes,setLikes]=useState(0);
+    return (
+        <div className="card">
+            <h2>{name}</h2>
+            <p>{role}</p>
+            {isOnline && <Badge>🟢 Online</Badge>}
+            <p>❤️ {likes} likes</p>
+            <button onClick={ ()=> setLikes(l=>l+1)}>Like</button>
+            
+                    </div>
+    );
+}
 export default ProfileCard;
