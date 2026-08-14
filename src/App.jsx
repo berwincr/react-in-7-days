@@ -12,7 +12,8 @@ function App(){
   
 }
 export default App;
-*/ 
+
+DAY 2:
 
 import ProfileCard from './ProfileCard';
 const people = [
@@ -37,3 +38,17 @@ function App(){
 }
 
 export default App;
+*/
+
+import Counter from './Counter';
+
+function App(){
+  return(
+    <div>
+      <Counter />
+      {people.map((person)=> (
+        <ProfileCard key ={person.id} {...person} />
+      ))}
+    </div>
+  );
+}
