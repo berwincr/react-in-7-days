@@ -46,3 +46,18 @@ Lesson: always check the browser console first.
 - Moved card data into a `people` array in `App.jsx`, rendered via `.map()` with `key={person.id}`
 - Built a reusable `Badge` component using `children`, used it for an "Online" status indicator
 
+# Day 3 — State & Events
+
+## What I learned
+- `useState` creates a state variable that persists across renders and triggers a re-render when updated
+- `const [value, setValue] = useState(initial)` — array destructuring, returns the current value + an updater function
+- Never mutate state directly (`count = 5`) — always call the setter (`setCount(5)`)
+- State updates can be stale if you use the current value directly in quick succession — use the functional form `setCount(c => c + 1)` when the new value depends on the previous one
+- React events are camelCase (`onClick`, `onChange`, `onSubmit`) and pass an event object `e` — `e.target.value` reads an input's current text
+- Controlled inputs: `value={state}` + `onChange` keeps React state as the single source of truth for form fields
+- Each component instance has its own independent state, even when rendered from the same component function multiple times
+
+## What I built
+- Like button on each `ProfileCard`, using its own local `useState` — confirmed each card's likes count is independent
+- Standalone `Counter` component with +, −, and Reset buttons using functional updates
+- Bonus: `CharCounter` — a controlled input showing live character count
